@@ -13,17 +13,15 @@ export default function ScrollTriggered() {
 }
 
 interface CardProps {
-	image: ReactNode; // Renamed from "emoji" for clarity
+	image: ReactNode;
 	hueA: number;
 	hueB: number;
 	i: number;
 }
 
 function Card({ image, hueA, hueB, i }: CardProps) {
-	// const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
-	const background = `#3d0808`;
 
-
+	const background = ` #2B2629`;
 	return (
 		<motion.div
 			className={`card-container-${i}`}
@@ -36,6 +34,7 @@ function Card({ image, hueA, hueB, i }: CardProps) {
 			<motion.div style={card} variants={cardVariants} className="card">
 				{image}
 			</motion.div>
+
 		</motion.div>
 	);
 }
@@ -63,7 +62,7 @@ const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 
 const container: React.CSSProperties = {
 	margin: "100px auto",
-	maxWidth: 500,
+	maxWidth: 400,
 	paddingBottom: 100,
 	width: "100%",
 };
@@ -89,8 +88,9 @@ const splash: React.CSSProperties = {
 
 const card: React.CSSProperties = {
 	fontSize: 164,
-	width: 300,
+	width: 250,
 	height: 430,
+	marginBottom: 80,
 	display: "flex",
 	justifyContent: "center",
 	alignItems: "center",
